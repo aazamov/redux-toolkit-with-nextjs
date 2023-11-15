@@ -2,12 +2,13 @@
 
 import { useGetUsersQuery } from "@/redux/services/userApi";
 import Link from "next/link";
+import React from "react";
 
-export default function Home() {
+const page = () => {
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
 
   return (
-    <main style={{ maxWidth: 1200, marginInline: "auto", padding: 20 }}>
+    <div>
       {error ? (
         <p>Oh no, there was an error</p>
       ) : isLoading || isFetching ? (
@@ -20,7 +21,7 @@ export default function Home() {
             gap: 20,
           }}
         >
-          <Link href="/world">hellow </Link>
+          <Link href="/">Main </Link>
           {data.map((user) => (
             <div
               key={user.id}
@@ -32,6 +33,8 @@ export default function Home() {
           ))}
         </div>
       ) : null}
-    </main>
+    </div>
   );
-}
+};
+
+export default page;

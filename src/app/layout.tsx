@@ -1,4 +1,5 @@
 import { Providers } from "@/redux/provider";
+import Link from "next/link";
 
 export const metadata = {
   title: "Create Next App",
