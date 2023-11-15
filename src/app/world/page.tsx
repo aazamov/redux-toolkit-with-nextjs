@@ -23,13 +23,14 @@ const page = () => {
         >
           <Link href="/">Main </Link>
           {data.map((user) => (
-            <div
+            <Link
+              href={`/posts/${user.id}`}
               key={user.id}
               style={{ border: "1px solid #ccc", textAlign: "center" }}
             >
               <h3>{user.title}</h3>
               <p>{user.body}</p>
-            </div>
+            </Link>
           ))}
         </div>
       ) : null}
